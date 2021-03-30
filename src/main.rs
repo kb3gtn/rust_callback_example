@@ -1,5 +1,7 @@
+// use my_mod.rs file..
 pub mod my_mod;
 
+// custom callback implementations
 fn custom_rx_cb(ci : &my_mod::ClientInfo ) -> std::result::Result<my_mod::CBResult, std::io::Error> {
     println!("custom rx callback for client_id {}.", ci.client_id );
     Ok(my_mod::CBResult::Keep)
@@ -15,6 +17,7 @@ fn  custom_tx_cb(ci : &my_mod::ClientInfo ) -> std::result::Result<my_mod::CBRes
     println!("custom tx callback for client_id {}.", ci.client_id );
     Ok(my_mod::CBResult::Keep)
 }
+
 
 fn main() {
     println!("callback test.");
